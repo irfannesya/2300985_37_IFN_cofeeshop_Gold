@@ -1,0 +1,102 @@
+<style>
+    /* style.css */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        margin: 0;
+        padding: 0;
+        background-size: 150vh;
+
+        background-image: url(https://img.freepik.com/free-photo/warmth-cafe-dull-day-oslo_53876-139512.jpg?w=1480&t=st=1697208752~exp=1697209352~hmac=e662c8e415e624771d4a6d18ade7f43efd05e737b68882e24acfb8c3913b7c69);
+
+    }
+
+    .container {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    .container h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .container input[type="text"],
+    .container input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    .container input[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .container input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    .container p {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .container a {
+        text-decoration: none;
+        color: #4CAF50;
+    }
+
+    .container a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form class="mt-5" id="create-produk-form">
+                <div class="form-group">
+                    <label for="title">Nama Produk</label>
+                    <input type="text" class="form-control" id="nama" name="nama" required>
+                </div>
+                <div class="form-group">
+                    <label for="title">Jenis</label>
+                    <input type="text" class="form-control" id="jenis" name="jenis" required>
+                </div>
+                <div class="form-group">
+                    <label for="title">harga</label>
+                    <input type="text" class="form-control" id="harga" name="harga" required>
+                </div>
+                <div class="form-group" action="/upload" method="post" enctype="multipart/form-data">
+                    <label for="cover">Photo Produk</label>
+                    <input type="file" name="photo" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="content">Deskripsi</label>
+                    <input type="text" id="content" name="content"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary float-right">Simpan</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+
+</script>

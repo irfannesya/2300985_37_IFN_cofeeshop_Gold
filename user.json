@@ -1,0 +1,17 @@
+[
+    {
+        "id": "kiran",
+        "email": "kiran@gmail.com",
+        "password": "123"
+    },
+    {
+        "id": "kenan",
+        "email": "kenan@gmail.com",
+        "password": "123"
+    },
+    {
+        "id": "admin",
+        "email": "admin@great.com",
+        "password": "123"
+    }
+]
