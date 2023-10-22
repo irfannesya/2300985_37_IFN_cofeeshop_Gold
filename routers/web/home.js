@@ -21,7 +21,9 @@ homeRouter.get('/login', homeController.indexLogin)
 
 
 // produk
-homeRouter.get('/produk-create', produkControler.CreateProduk)
-homeRouter.get('/daftarproduk', homeController.indexproduk)
+homeRouter.get('/produk-create', produkControler.CreateProduk);
+homeRouter.get('/daftarproduk', produkControler.indexProduk);
+homeRouter.get('/editProduk', produkControler.updateProduk)
+
 
 module.exports = homeRouter;

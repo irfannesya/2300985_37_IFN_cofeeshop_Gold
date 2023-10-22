@@ -1,0 +1,87 @@
+<style>
+    body {
+
+        background-size: 150vh;
+
+        background-image: url(https://img.freepik.com/free-photo/warmth-cafe-dull-day-oslo_53876-139512.jpg?w=1480&t=st=1697208752~exp=1697209352~hmac=e662c8e415e624771d4a6d18ade7f43efd05e737b68882e24acfb8c3913b7c69);
+
+
+    }
+
+    .container h2 {
+        color: aliceblue;
+    }
+
+    .container table {
+        background-color: color-mix(in oklab, color percentage, color percentage);
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="produk" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Produk</title>
+    <!-- Menggunakan Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/views/asset/css/style.css">
+
+</head>
+
+<body>
+    <div class="container" id="daftar-produk">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Jenis</th>
+                    <th scope="col">Harga</th>
+                    <th scope="col">URL Image</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Deskripsi</th>
+                    <th scope="col">Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <% produk.forEach(data=> { %>
+                    <tr>
+
+                        <td>
+                            <%= data.nama %>
+                        </td>
+                        <td>
+                            <%= data.jenis%>
+                        </td>
+                        <td>
+                            <%= data.harga %>
+                        </td>
+                        <td>
+                            <%= data.image %>
+                        </td>
+                        <td>
+                            <img src="<%=data.image %>" class="card-img-top" alt="Minuman2" width="50" height="50">
+                            <div class="card-body">
+                        </td>
+                        <td>
+                            <%= data.deskripsi %>
+                        </td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-danger" id="deleteProduk"
+                                    onclick="deleteProduk('<%= data.id %>')">Delete</button>
+                                <button type="button" class="btn btn-primary" id="edit" data-bs-toggle="modal"
+                                    data-bs-target="#modalTambahProduk" id="<%= data.id  %>">Edit</button>
+
+                                <% }); %>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Menggunakan Bootstrap JS dan jQuery (diperlukan untuk beberapa fitur Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+</body>

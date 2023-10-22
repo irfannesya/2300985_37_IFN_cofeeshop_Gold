@@ -1,4 +1,6 @@
 const NewsService = require("../services/news.service");
+const ProdukService = require("../services/produk.service");
+const produkService = new ProdukService();
 
 
 
@@ -22,8 +24,19 @@ class HomeController {
     indexFeedback(req, res) {
         res.render("feedback");
     }
-    indexOrder(req, res) {
-        res.render("order");
+    async indexOrder(req, res) {
+        try {
+            const produkData = await produkService.getProduk(null);
+            res.render('order',
+                {
+                    pageTitle: "HOME | daftar produk",
+                    layout: "layouts/layouts",
+                    produk: produkData
+                });
+        } catch (error) {
+            console.log(error);
+        }
+
     }
     indexPromo(req, res) {
         res.render("promo");
@@ -43,9 +56,6 @@ class HomeController {
             pageTitle: 'Registration',
             user: req.user
         })
-    }
-    indexproduk(req, res) {
-        res.render("produk");
     }
 }
 

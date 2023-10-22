@@ -76,43 +76,51 @@
 
 
 
-
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <form class="mt-5" id="create-produk-form">
+            <form class="mt-5" id="edit-produk-form">
+                <div class="form-group">
+                    <label for="title">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" required>
+                </div>
                 <div class="form-group">
                     <label for="title">Nama Produk</label>
-                    <input type="text" class="form-control" id="nama" name="nama" required>
+                    <input type="text" <%=data.nama %> class="form-control" id="nama" name="nama" required>
                 </div>
                 <div class="form-group">
                     <label for="title">Jenis</label>
-                    <input type="text" class="form-control" id="jenis" name="jenis" required>
+                    <input type="text" <%=data.jenis %> class="form-control" id="jenis" name="jenis" required>
                 </div>
                 <div class="form-group">
                     <label for="title">harga</label>
-                    <input type="text" class="form-control" id="harga" name="harga" required>
+                    <input type="text" <%=data.harga %>class="form-control" id="harga" name="harga" required>
                 </div>
                 <div class="form-group" action="/upload" method="post" enctype="multipart/form-data">
                     <label for="cover">Link Photo Produk</label>
-                    <input type="text" id="image" name="image" accept="link">
+                    <input type="text" <%=data.image %> id="image" name="image" accept="link">
                 </div>
-                <div class="form-group">
-                    <label for="content">Deskripsi</label>
-                    <input type="text" id="deskripsi" name="content"></textarea>
-                </div>
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="submit" class="btn btn-primary float-right">Simpan</button>
-                </div>
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button link to="home" class="btn-outline-success">exit</button>
-                </div>
+
+                <div class="form-group" action="/upload" method="post" enctype="multipart/form-data">
+                    <label for="cover">Link Photo Produk</label>
+                    <img src="<%=data.image %>" class="card-img-top" alt="Minuman2" width="50" height="50">
+                    <div class="card-body">
+                    </div>
+                    <div class="form-group">
+                        <label for="content">Deskripsi</label>
+                        <input type="text" <%=data.image %> id="deskripsi" name="content"></textarea>
+                    </div>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="submit" class="btn btn-primary float-right">save Edit</button>
+                    </div>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button link to="home" class="btn-outline-success">exit</button>
+                    </div>
 
             </form>
         </div>
     </div>
 </div>
-
 <script>
 
 </script>

@@ -11,92 +11,40 @@
 
 
         }
+
+        .container h2 {
+            color: aliceblue;
+
+        }
     </style>
 
     <!-- Daftar Berita -->
     <div class="container mt-4">
         <h2>Daftar Menu</h2>
         <div class="row">
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="https://images.unsplash.com/photo-1596952954288-16862d37405b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEVzcHJlc3NvfGVufDB8fDB8fHww&auto=format&fit=crop&w=1000&q=60"
-                        class="card-img-top" alt="Minuman1" width="100" height="200">
-                    <div class="card-body">
-                        <h5 class="card-title">Espresso (Shot Glass)</h5>
-                        <p class="card-text">Harga Rp. 30.000</p>
-                        <a href="#" class="btn btn-primary">Buy</a>
+            <% produk.forEach(data=> { %>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="<%=data.image %>" class="card-img-top" alt="Minuman2" width="100" height="200">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= data.nama %>
+                            </h5>
+                            <p class="card-text">
+                                <%= data.harga%>
+                            </p>
+                            <p class="card-text">
+                                <%= data.deskripsi%>
+                            </p>
+                            <a href="#" class="btn btn-primary">Buy</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="https://images.unsplash.com/photo-1551030173-122aabc4489c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8QW1lcmljYW5vfGVufDB8fDB8fHww&auto=format&fit=crop&w=1000&q=60"
-                        class="card-img-top" alt="Minuman2" width="100" height="200">
-                    <div class="card-body" text-color : red>
-                        <h5 class="card-title">Americano</h5>
-                        <p class="card-text">Rp. 41.000</p>
-                        <a href="#" class="btn btn-primary">Buy</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Q2FwcHVjY2lub3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1000&q=60"
-                        class="card-img-top" alt="Minuman3" width="100" height="200">
-                    <div class="card-body">
-                        <h5 class="card-title">Cappuccino</h5>
-                        <p class="card-text">Harga Rp. 31.000</p>
-                        <a href="#" class="btn btn-primary">Buy</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="https://images.unsplash.com/photo-1593443320739-77f74939d0da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGF0dGUlMjBjb2ZmZWV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1000&q=60"
-                        class="card-img-top" alt="Minuman4" width="100" height="200">
-                    <div class="card-body">
-                        <h5 class="card-title">Latte</h5>
-                        <p class="card-text"> Harga Rp. 46.000</p>
-                        <a href="#" class="btn btn-primary">Buy</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="https://images.unsplash.com/photo-1618576230663-9714aecfb99a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8TW9jaGF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1000&q=60"
-                        class="card-img-top" alt="Minuman5" width="100" height="200">
-                    <div class="card-body">
-                        <h5 class="card-title">Mocha</h5>
-                        <p class="card-text">Harga Rp. 41.000</p>
-                        <a href="#" class="btn btn-primary">Buy</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="https://media.istockphoto.com/id/480350338/id/foto/cangkir-kopi-dengan-kabut-dengan-koran-daun-kopi-saat-sarapan.webp?b=1&s=170667a&w=0&k=20&c=f3Hf0h9RTPpNUY3c7U-DHmqIt9d2CEknBbZ8fAyQnpY="
-                        class="card-img-top" alt="Minuman" width="100" height="200">
-                    <div class="card-body">
-                        <h5 class="card-title">Kopi hitam</h5>
-                        <p class="card-text">Rp. 35.000 Ukuran Tall (354 ml)</p>
-                        <a href="#" class="btn btn-primary">Buy</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="https://images.unsplash.com/photo-1520224220083-214daa28c5f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8QWZmb2dhdG98ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1000&q=60"
-                        class="card-img-top" alt="Minuman7" width="100" height="200">
-                    <div class="card-body">
-                        <h5 class="card-title">Affogato</h5>
-                        <p class="card-text">Harha Rp. 36.000</p>
-                        <a href="#" class="btn btn-primary">Buy</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tambahkan lebih banyak card berita jika diperlukan -->
+                <% }); %>
         </div>
+        <!-- Tambahkan lebih banyak card berita jika diperlukan -->
+    </div>
+
     </div>
 
 
