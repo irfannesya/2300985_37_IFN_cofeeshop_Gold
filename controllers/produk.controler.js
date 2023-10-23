@@ -99,11 +99,11 @@ class ProdukControler {
         try {
             const id = req.params.id;
             const produkData = await produkService.getPRodukId(id);
-            //   res.render("kelasEdit", {
-            //       kelas: kelasData,
-            //   });
-            res.status(200).json({ produk: produkData });
-            console.log(error);
+            res.render("produk/editProduk", {
+                produk: produkData,
+            });
+            // res.status(200).json({ produk: produkData });
+            // console.log(error);
         } catch (error) {
             console.log(error);
         }
@@ -112,17 +112,17 @@ class ProdukControler {
 
     async updateProduk(req, res) {
         try {
-            const ProdukId = req.params.id;
+            const produkId = req.params.id;
             const updatedProdukData = req.body;
 
-            const editProduk = await produkService.updateProduk(ProdukId, updatedProdukData);
+            const editProduk = await produkService.updateProduk(produkId, updatedProdukData);
             console.log(editProduk);
             if (editProduk) {
                 res
                     .status(200)
                     .json({ data: editProduk, message: "Poduk berhasil diubah" });
             } else {
-                res.status(404).json({ message: "Produk tidak ditemukan" });
+                res.status(500).json({ message: "FAILED" });
             }
         } catch (error) {
             console.error(error);

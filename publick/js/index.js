@@ -111,34 +111,34 @@ function deleteProduk(id) {
 }
 
 
-function updateProduk(params) {
-  $.ajax({
-    url: "/api/v1/daftarproduk/" + id,
-    type: "PUT",
-    success: function (response) {
-      alert("Data produk berhasul di ubah.");
-      window.location.href = "/daftarproduk";
-    },
-    error: function (error) {
-      // Tindakan jika terjadi kesalahan
-      console.error("Terjadi kesalahan: " + JSON.stringify(error));
-      alert("Gagal menghapus produk.");
-    },
+// function updateProduk(params) {
+//   $.ajax({
+//     url: "/api/v1/daftarproduk/" + id,
+//     type: "PUT",
+//     success: function (response) {
+//       alert("Data produk berhasul di ubah.");
+//       window.location.href = "/daftarproduk";
+//     },
+//     error: function (error) {
+//       // Tindakan jika terjadi kesalahan
+//       console.error("Terjadi kesalahan: " + JSON.stringify(error));
+//       alert("Gagal menghapus produk.");
+//     },
 
-  })
+//   })
 
-}
+// }
 
 // klik tombol "Edit"
-$(".edit-produk-form").click(function () {
+$(".edit-produk").click(function () {
   const selectedProduklId = $(this).attr("id");
   // Redirect ke halaman edit dengan membawa ID kelas
-  window.location.href = `/produk/edit/${selectedProduklId}`;
+  window.location.href = `/daftarProduct/edit/${selectedProduklId}`;
 
 });
 
 // EDIT Produk
-$("#edit-produk-form-form").submit(function (event) {
+$("#edit-produk-form").submit(function (event) {
   event.preventDefault(); // Menghentikan pengiriman formulir secara default
 
   let nama = $("#nama").val();
@@ -149,7 +149,7 @@ $("#edit-produk-form-form").submit(function (event) {
 
   // Mengirim data ke API menggunakan AJAX
   $.ajax({
-    url: `"/api/v1/produk"${id}`, // Gunakan selectedKelasId
+    url: `"/api/v1/editProduk"${id}`, // Gunakan selectedKelasId
     type: "PUT", // Menggunakan metode PUT untuk pengeditan
     contentType: "application/json",
     data: JSON.stringify({ nama, jenis, harga, image, deskripsi }),
@@ -157,7 +157,7 @@ $("#edit-produk-form-form").submit(function (event) {
       // Tindakan setelah berhasil
       alert("Mata pelajaran berhasil diedit.");
       // Redirect ke halaman lain atau lakukan sesuatu yang sesuai kebutuhan Anda
-      window.location.href = "";
+      window.location.href = "/daftarproduk";
     },
     error: function (error) {
       // Tindakan jika terjadi kesalahan

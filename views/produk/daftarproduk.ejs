@@ -70,8 +70,7 @@
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <button type="button" class="btn btn-danger" id="deleteProduk"
                                     onclick="deleteProduk('<%= data.id %>')">Delete</button>
-                                <button type="button" class="btn btn-primary" id="edit" data-bs-toggle="modal"
-                                    data-bs-target="#modalTambahProduk" id="<%= data.id  %>">Edit</button>
+                                <button id="<%= data.id %>" class="btn btn-info btn-sm edit-produk">Edit</button>
 
                                 <% }); %>
                         </td>

@@ -34,16 +34,29 @@ class ProdukService {
         return produks
     }
 
+
     async updateProduk(payload, id) {
         try {
             const { nama, jenis, harga, image, deskripsi } = payload;
-            const produk = this.produkModel.update({ nama, jenis, harga, image, deskripsi }, {
-                where: {
-                    id: id
-                }
-            })
 
-            return produks
+            const produkUpdate = await this.produkModel.findOne({
+                where: { id: id },
+            });
+
+            if (!produkUpdate) {
+                throw new Error("Produk tidak ditemukan.");
+            }
+
+
+            await produkUpdate.update({
+                nama,
+                jenis,
+                harga,
+                image,
+                deskripsi
+            });
+
+            return produkUpdate
 
         } catch (error) {
             console.log(error);
@@ -54,7 +67,7 @@ class ProdukService {
         try {
             return await this.produkModel.findOne({
                 where: {
-                    id: id
+                    id,
                 }
             });
         } catch (error) {
@@ -62,7 +75,7 @@ class ProdukService {
         }
     }
 
-    
+
 
 
 }

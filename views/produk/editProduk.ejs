@@ -80,35 +80,32 @@
     <div class="row">
         <div class="col-md-12">
             <form class="mt-5" id="edit-produk-form">
-                <div class="form-group">
-                    <label for="title">ID</label>
-                    <input type="text" class="form-control" id="id" name="id" required>
-                </div>
+                <input type="hidden" name="produkId" id="produklId" value="<%= produk.id %>">
                 <div class="form-group">
                     <label for="title">Nama Produk</label>
-                    <input type="text" <%=data.nama %> class="form-control" id="nama" name="nama" required>
+                    <input type="text" value="<%=produk.nama %>" class="form-control" id="nama" name="nama" required>
                 </div>
                 <div class="form-group">
                     <label for="title">Jenis</label>
-                    <input type="text" <%=data.jenis %> class="form-control" id="jenis" name="jenis" required>
+                    <input type="text" value="<%=produk.jenis %>" class="form-control" id="jenis" name="jenis" required>
                 </div>
                 <div class="form-group">
                     <label for="title">harga</label>
-                    <input type="text" <%=data.harga %>class="form-control" id="harga" name="harga" required>
+                    <input type="text" value="<%=produk.harga %>" class="form-control" id="harga" name="harga" required>
                 </div>
                 <div class="form-group" action="/upload" method="post" enctype="multipart/form-data">
                     <label for="cover">Link Photo Produk</label>
-                    <input type="text" <%=data.image %> id="image" name="image" accept="link">
+                    <input type="text" value="<%=produk.image %>" id="image" name="image" accept="link">
                 </div>
 
                 <div class="form-group" action="/upload" method="post" enctype="multipart/form-data">
                     <label for="cover">Link Photo Produk</label>
-                    <img src="<%=data.image %>" class="card-img-top" alt="Minuman2" width="50" height="50">
+                    <img src="<%=produk.image %>" class="card-img-top" alt="Minuman2" width="50" height="50">
                     <div class="card-body">
                     </div>
                     <div class="form-group">
                         <label for="content">Deskripsi</label>
-                        <input type="text" <%=data.image %> id="deskripsi" name="content"></textarea>
+                        <input type="text" <%=produk.image %> id="deskripsi" name="content"></textarea>
                     </div>
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <button type="submit" class="btn btn-primary float-right">save Edit</button>
