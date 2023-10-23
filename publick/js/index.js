@@ -146,23 +146,25 @@ $("#edit-produk-form").submit(function (event) {
   let harga = $("#harga").val();
   let image = $("#image").val();
   let deskripsi = $("#deskripsi").val();
+  let id = $("#produkId").val();
+
 
   // Mengirim data ke API menggunakan AJAX
   $.ajax({
-    url: `"/api/v1/editProduk"${id}`, // Gunakan selectedKelasId
+    url: `/api/v1/editProduk/${id}`, // Gunakan selectedKelasId
     type: "PUT", // Menggunakan metode PUT untuk pengeditan
     contentType: "application/json",
     data: JSON.stringify({ nama, jenis, harga, image, deskripsi }),
     success: function (response) {
       // Tindakan setelah berhasil
-      alert("Mata pelajaran berhasil diedit.");
+      alert("Data Produk berhasil di edit.");
       // Redirect ke halaman lain atau lakukan sesuatu yang sesuai kebutuhan Anda
       window.location.href = "/daftarproduk";
     },
     error: function (error) {
       // Tindakan jika terjadi kesalahan
       console.error("Terjadi kesalahan: " + JSON.stringify(error));
-      alert("Gagal menyimpan mata pelajaran.");
+      alert("Gagal Edit data.");
     },
   });
 });

@@ -35,31 +35,15 @@ class ProdukService {
     }
 
 
-    async updateProduk(payload, id) {
+    //api 
+    async updateProduk(produkId, updatedProdukData) {
         try {
-            const { nama, jenis, harga, image, deskripsi } = payload;
-
-            const produkUpdate = await this.produkModel.findOne({
-                where: { id: id },
-            });
-
-            if (!produkUpdate) {
-                throw new Error("Produk tidak ditemukan.");
-            }
-
-
-            await produkUpdate.update({
-                nama,
-                jenis,
-                harga,
-                image,
-                deskripsi
-            });
-
-            return produkUpdate
+            const product = await this.produkModel.findOne({ where: { id: produkId } });
+            return await product.update(updatedProdukData)
 
         } catch (error) {
-            console.log(error);
+            console.error(error);
+            throw new Error(error);
         }
     }
 
